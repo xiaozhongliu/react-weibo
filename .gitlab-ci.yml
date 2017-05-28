@@ -1,0 +1,38 @@
+# all stages of pipeline
+stages:
+  - int
+  - test
+  - prod
+
+# integration env
+int:
+  stage: int
+  tags:
+    - runner-application
+  script:
+    - cd ~/www/react-weibo
+    - git pull -r
+    - npm run restart
+  environment:
+    name: integration
+    url: https://crawler.flashbeep.cn
+
+# unit testing
+test:
+  stage: test
+  tags:
+    - runner-application
+  script:
+    - cd ~/www/react-weibo
+    - node ./node_modules/jest/bin/jest.js --runInBand --forceExit
+
+# production env
+prod:
+  stage: prod
+  tags:
+    - runner-postgres
+  script:
+    - cd ~ && ls
+  environment:
+    name: production
+    url: https://crawler.flashbeep.cnÏ
