@@ -3,7 +3,7 @@ const config = require('../config')
 const LogType = global.Enum.LogType
 
 logger.log(LogType.Launch.text, {
-    message: `service starts on http://localhost:${config.APP_PORT}`
+    message: `service starts on http://localhost:${config.API_PORT}`
 })
 
 module.exports = (req, res, next) => {

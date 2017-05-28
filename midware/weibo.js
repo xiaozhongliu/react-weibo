@@ -9,7 +9,7 @@ weibo.init('weibo', config.APP_KEY, config.APP_SECRET)
 
 module.exports = weibo.oauth({
     blogtypeField: 'type',
-    homeUrl: `http://${config.APP_DOMAIN}${config.DEBUG ? `:${config.APP_PORT}` : ''}`,
+    homeUrl: `http://${config.APP_DOMAIN}${config.DEBUG ? `:${config.API_PORT}` : ''}`,
     afterLogin: function (req, res, callback) {
         console.log(req.session.oauthUser.screen_name, 'login success')
         process.nextTick(callback)

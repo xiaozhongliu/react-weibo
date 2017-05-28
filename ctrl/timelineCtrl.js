@@ -7,13 +7,12 @@ const EMOTIONS = require('./data/emotion.json')
 
 module.exports = {
 
-    async weiboAuth(req, res, next) {
+    async weiboAuth(req, res) {
         if (!req.session.oauthUser) {
             return res.redirect('/oauth?type=weibo')
         }
         res.redirect(APP_REDIRECT_URL)
     },
-
 
     async timeline(req, res, next) {
 

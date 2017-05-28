@@ -55,4 +55,4 @@ app.use(({ code = -1, message, stack }, req, res, next) => {
     code > 1 || console.log(stack)
 })
 
-app.listen(config.APP_PORT)
+app.listen(config.API_PORT)
