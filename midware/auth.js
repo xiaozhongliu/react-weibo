@@ -26,7 +26,8 @@ module.exports = (req, res, next) => {
  */
 function isNoAuthPath(url) {
     const queryIndex = url.indexOf('?')
-    return config.NO_AUTH_PATHS.includes(url.substring(0, queryIndex)) || config.NO_AUTH_REG.test(url)
+    if (queryIndex > -1) url = url.substring(0, queryIndex)
+    return config.NO_AUTH_PATHS.includes(url) || config.NO_AUTH_REG.test(url)
 }
 
 /**

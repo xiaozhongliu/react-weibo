@@ -5,4 +5,5 @@ module.exports = {
     cors: require('./cors'),
     auth: require('./auth'),
     validate: require('./validate'),
+    weibo: require('./weibo'),
 }

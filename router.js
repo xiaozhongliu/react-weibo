@@ -1,9 +1,10 @@
 const router = require('express').Router()
-const { validate } = require('./midware')
-const { basicCtrl } = require('./ctrl')
+const { timelineCtrl } = require('./ctrl')
 
-// basic ctrl
-router.post('/api/login', co(basicCtrl.login))
+// timeline ctrl
+router.get('/', co(timelineCtrl.default))
+router.get('/weiboAuth', co(timelineCtrl.weiboAuth))
+router.get('/timeline', co(timelineCtrl.timeline))
 
 // check health
 router.get('/monitor', (req, res) => {

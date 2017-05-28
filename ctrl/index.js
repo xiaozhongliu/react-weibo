@@ -1,3 +1,3 @@
 module.exports = {
-    basicCtrl: require('./basicCtrl'),
+    timelineCtrl: require('./timelineCtrl'),
 }
