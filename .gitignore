@@ -11,11 +11,13 @@
 
 # misc
 .idea
-.vscode
+.vscode/chrome
 .DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# custom
+/src/asset/style/*.css
 *.log

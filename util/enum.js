@@ -1,7 +1,7 @@
 /**
  * enums for both server and client
  */
-if (!global) global = window
+if (!global) global = window    // eslint-disable-line
 
 global.Enum = {
 
@@ -22,6 +22,7 @@ global.Enum = {
                 target = current
                 return true
             }
+            return false
         })
         return target
     },
@@ -35,6 +36,7 @@ global.Enum = {
                 target = key
                 return true
             }
+            return false
         })
         return target
     },

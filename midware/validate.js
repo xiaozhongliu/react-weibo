@@ -49,7 +49,7 @@ function handleValidationResult(req, next) {
         if (!result.isEmpty()) {
             const arr = result.array()[0].msg.split('@@')
             const err = new Error(arr[1])
-            err.code = parseInt(arr[0])
+            err.code = Number(arr[0])
             return next(err)
         }
         next()
