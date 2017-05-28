@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import '../asset/style/com/Timeline.css'
-import config from '../config'
 
 class Timeline extends Component {
 
@@ -8,16 +8,14 @@ class Timeline extends Component {
         const type = 'public'
 
         const res = await (await fetch(
-            `${config.API_HOST}/timeline?type=${type}`, {
+            `${window.config.API_HOST}/timeline?type=${type}`, {
                 headers: { "Content-Type": "application/json" },
                 credentials: 'include'
             })).json()
 
         if (res.code === 10001) {
-            window.location.href = `${config.API_HOST}/weiboAuth`
+            this.props.history.push('/login')
         }
-
-        console.log(res)
     }
 
     render() {
@@ -26,6 +24,10 @@ class Timeline extends Component {
             </div>
         )
     }
+}
+
+Timeline.propTypes = {
+    history: PropTypes.object
 }
 
 export default Timeline

@@ -2,7 +2,6 @@ const router = require('express').Router()
 const { timelineCtrl } = require('./ctrl')
 
 // timeline ctrl
-router.get('/', co(timelineCtrl.default))
 router.get('/weiboAuth', co(timelineCtrl.weiboAuth))
 router.get('/timeline', co(timelineCtrl.timeline))
 
@@ -13,7 +12,7 @@ router.get('/monitor', (req, res) => {
 
 // co method
 function co(asyncFunc) {
-    return async function (req, res, next) {
+    return async function(req, res, next) {
         try {
             await asyncFunc(req, res, next)
         } catch (err) {
