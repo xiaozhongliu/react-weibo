@@ -23,18 +23,5 @@ module.exports = {
         env_test: {
             NODE_ENV: 'test'
         }
-    }, {
-        name: `${config.APP_NAME}-task`,
-        script: './task/tokenExpire.js',
-        instances: 1,
-        exec_mode: 'cluster',
-        out_file: './log/pm2/out.log',
-        error_file: './log/pm2/error.log',
-        env_prod: {
-            NODE_ENV: 'prod'
-        },
-        env_test: {
-            NODE_ENV: 'test'
-        }
     }]
 }
