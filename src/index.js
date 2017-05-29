@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
-import Timeline from './com/Timeline'
-import Login from './Login'
+import Main from './com/Main'
+import Login from './com/Login'
 import './config'
 import './asset/style/index.css'
 
 ReactDOM.render((
     <BrowserRouter>
         <div>
-            <Route path="/" component={Timeline}/>
+            <Route exact path="/" component={Main}/>
             <Route path="/login" component={Login}/>
         </div>
     </BrowserRouter>

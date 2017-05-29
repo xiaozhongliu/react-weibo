@@ -1,4 +1,4 @@
-.app {
+.login {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,12 +9,12 @@
     font-size: 1.5em;
     background: #222;
 
-    .app-logo {
-        height: 180px;
+    .login-logo {
+        height: 6em;
         animation: App-logo-spin infinite 20s linear;
     }
 
-    .app-login {
+    .login-btn {
         width: 3.5em;
         margin-top: 2em;
         border: none;

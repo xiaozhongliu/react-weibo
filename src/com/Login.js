@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import logo from './asset/logo.svg'
-import './asset/style/Login.css'
+import logo from '../asset/logo.svg'
+import '../asset/style/Login.css'
 
 class Login extends Component {
 
@@ -12,10 +12,10 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="app">
-                <img src={logo} className="app-logo" alt="logo"/>
+            <div className="login">
+                <img src={logo} className="login-logo" alt="logo"/>
                 <span>React Weibo</span>
-                <button className="app-login" onClick={this.login.bind(this)}>Login</button>
+                <button className="login-btn" onClick={this.login.bind(this)}>Login</button>
             </div>
         )
     }
