@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import logo from '../asset/logo.svg'
-import '../asset/style/Login.css'
+import '../asset/style/com/Login.css'
 
 class Login extends Component {
 
     login() {
-        this.props.history.push('/')
+        this.props.history.push('/timeline')
         window.location.href = `${window.config.API_HOST}/weiboAuth`
     }
 

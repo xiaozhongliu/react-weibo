@@ -16,6 +16,8 @@ class Timeline extends Component {
         if (res.code === 10001) {
             this.props.history.push('/login')
         }
+
+        console.log(res)
     }
 
     render() {

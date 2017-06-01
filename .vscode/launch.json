@@ -5,12 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Node",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/app.js"
-        },
-        {
             "name": "Chrome",
             "type": "chrome",
             "request": "launch",
@@ -20,6 +14,12 @@
             "sourceMapPathOverrides": {
                 "webpack:///src/*": "${webRoot}/*"
             }
+        },
+        {
+            "name": "Node",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/app.js"
         }
     ]
 }

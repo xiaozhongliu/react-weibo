@@ -1,16 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter, Route } from 'react-router-dom'
-import Main from './com/Main'
-import Login from './com/Login'
+import dva from 'dva'
+import { browserHistory } from 'dva/router'
+import createLoading from 'dva-loading'
+import router from './router'
 import './config'
-import './asset/style/index.css'
 
-ReactDOM.render((
-    <BrowserRouter>
-        <div>
-            <Route exact path="/" component={Main}/>
-            <Route path="/login" component={Login}/>
-        </div>
-    </BrowserRouter>
-), document.getElementById('root'))
+const app = dva({
+    history: browserHistory
+})
+
+// 2. Plugins
+app.use(createLoading())
+
+// 3. Model
+// Moved to router.js
+
+// 4. Router
+app.router(router)
+
+// 5. Start
+app.start('#root')
