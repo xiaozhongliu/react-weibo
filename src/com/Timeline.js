@@ -30,10 +30,12 @@ class Timeline extends Component {
                     this.list.map((item, index) => {
                         return (
                             <div className="timeline" key={index}>
-                                <img className="head" alt="" src={item.user.profile_image_url}/>
-                                <span className="name">{ item.user.name}</span>:
+                                <img className="head" alt="" src={item.user.profile_image_url} />
+                                <span className="name">{item.user.name}</span>:
                                 <span className="text">{item.text}</span>
-                                {item.bmiddle_pic && (<img className="pic" alt="" src={item.bmiddle_pic}/>)}
+                                {item.bmiddle_pic &&
+                                    <img className="pic" alt="" src={item.bmiddle_pic} />
+                                }
                             </div>
                         )
                     })

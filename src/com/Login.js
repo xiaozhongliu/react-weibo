@@ -18,7 +18,7 @@ class Login extends Component {
     render() {
         return (
             <div className="login">
-                <img src={logo} className="login-logo" alt="logo"/>
+                <img src={logo} className="login-logo" alt="logo" />
                 <span>React Weibo</span>
                 <button className="login-btn" onClick={this.login.bind(this)}>Login</button>
             </div>

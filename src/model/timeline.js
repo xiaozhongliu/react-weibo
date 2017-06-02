@@ -20,7 +20,7 @@ export default {
     effects: {
         *fetch({ payload: { type = 'public', page = 1 } }, { put }) {
             const res = yield API.getTimelines(type, page)
-            if(res.code===10001){
+            if (res.code === 10001) {
                 yield put(routerRedux.push('login'))
                 return
             }
