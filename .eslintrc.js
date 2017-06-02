@@ -4,5 +4,6 @@ module.exports = {
 
     rules: {
         'indent': 2,
+        'no-extend-native': 0,
     }
 }

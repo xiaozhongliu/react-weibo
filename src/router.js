@@ -7,13 +7,18 @@ function RouterConfig({ history, app }) {
         {
             path: '/',
             getComponent(nextState, cb) {
-                require.ensure([], require => { cb(null, require('./com/Main').default) })
+                require.ensure([], require => {
+                    cb(null, require('./com/Main').default)
+                })
             },
             childRoutes: [
                 {
                     path: '/timeline',
                     getComponent(nextState, cb) {
-                        require.ensure([], require => { cb(null, require('./com/Timeline').default) })
+                        require.ensure([], require => {
+                            registerModel(app, require('./model/timeline').default)
+                            cb(null, require('./com/Timeline').default)
+                        })
                     },
                 },
             ]
@@ -21,7 +26,9 @@ function RouterConfig({ history, app }) {
         {
             path: '/login',
             getComponent(nextState, cb) {
-                require.ensure([], require => { cb(null, require('./com/Login').default) })
+                require.ensure([], require => {
+                    cb(null, require('./com/Login').default)
+                })
             },
         },
     ]
@@ -29,12 +36,12 @@ function RouterConfig({ history, app }) {
     return <Router history={history} routes={routes} />
 }
 
-// const cached = {}
-// function registerModel(app, model) {
-//     if (!cached[model.namespace]) {
-//         app.model(model)
-//         cached[model.namespace] = 1
-//     }
-// }
+const cached = {}
+function registerModel(app, model) {
+    if (!cached[model.namespace]) {
+        app.model(model)
+        cached[model.namespace] = true
+    }
+}
 
 export default RouterConfig

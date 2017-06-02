@@ -4,11 +4,15 @@ import menu from '../asset/menu.png'
 import '../asset/style/com/Menu.css'
 
 class Menu extends Component {
+    constructor(props) {
+        super(props)
+        this.toggleMenu = this.toggleMenu.bind(this)
 
-    state = {
-        timelineType: 'public',
-        menuElement: null,
-        menuHidden: true,
+        this.state = {
+            timelineType: 'public',
+            menuElement: null,
+            menuHidden: true,
+        }
     }
 
     async toggleMenu() {
@@ -23,7 +27,7 @@ class Menu extends Component {
             menu.style.height = '48px'
         }, 300)
 
-        this.setState({ menuHidden: !this.state.menuHidden })
+        this.setState(prevState => ({ menuHidden: !prevState.menuHidden }))
     }
 
     render() {
@@ -35,22 +39,22 @@ class Menu extends Component {
                         <div className="username">DreamsAchieved</div>
                     </div>
                     <ul>
-                        <li onClick={this.toggleMenu.bind(this)}>
+                        <li onClick={this.toggleMenu}>
                             <router-link to="/timeline/public">公共微博</router-link>
                         </li>
-                        <li onClick={this.toggleMenu.bind(this)}>
+                        <li onClick={this.toggleMenu}>
                             <router-link to="/timeline/friends">朋友微博</router-link>
                         </li>
                     </ul>
                 </aside>
                 <main>
                     <header>
-                        <img onClick={this.toggleMenu.bind(this)} src={menu} alt="" />
+                        <img onClick={this.toggleMenu} src={menu} alt="" />
                         <div className="title">
                             <span>{this.state.timelineType === 'public' ? '公共微博' : '朋友微博'}</span>
                         </div>
                     </header>
-                    <div className="shade" onClick={this.toggleMenu.bind(this)} />
+                    <div className="shade" onClick={this.toggleMenu} />
                 </main>
             </div>
         )

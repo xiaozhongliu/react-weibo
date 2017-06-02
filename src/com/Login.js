@@ -5,8 +5,13 @@ import '../asset/style/com/Login.css'
 
 class Login extends Component {
 
+    constructor(props) {
+        super(props)
+        this.history = PropTypes.object
+    }
+
     login() {
-        this.props.history.push('/timeline')
+        this.props.history.push('timeline')
         window.location.href = `${window.config.API_HOST}/weiboAuth`
     }
 
@@ -19,10 +24,6 @@ class Login extends Component {
             </div>
         )
     }
-}
-
-Login.propTypes = {
-    history: PropTypes.object
 }
 
 export default Login

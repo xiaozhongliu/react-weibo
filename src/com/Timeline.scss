@@ -1,3 +1,31 @@
-.timeline {
+.timelines {
+    padding: 13px;
 
+    .timeline {
+        padding: 8px;
+        margin-bottom: 10px;
+        border: #ddd 1px solid;
+        border-radius: 3px
+    }
+
+    .head {
+        position: relative;
+        top: 4px;
+        height: 20px;
+        border-radius: 10px
+    }
+
+    .name {
+        color: blue
+    }
+
+    .text {
+        word-break: break-all
+    }
+
+    .pic {
+        position: relative;
+        top: 5px;
+        border-radius: 3px
+    }
 }

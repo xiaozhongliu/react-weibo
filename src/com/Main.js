@@ -5,22 +5,25 @@ import '../asset/style/com/Main.css'
 
 class Main extends Component {
 
+    constructor(props) {
+        super(props)
+        this.history = PropTypes.object
+    }
+
     componentDidMount() {
-        this.props.history.push('/timeline')
+        this.props.history.push('timeline')
     }
 
     render() {
         return (
             <div className="main">
-                <LeftMenu/>
-                {this.props.children}
+                <LeftMenu />
+                <article>
+                    {this.props.children}
+                </article>
             </div>
         )
     }
-}
-
-Main.propTypes = {
-    history: PropTypes.object
 }
 
 export default Main

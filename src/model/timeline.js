@@ -1,3 +1,4 @@
+import { routerRedux } from 'dva/router'
 import API from '../api'
 
 export default {
@@ -5,22 +6,28 @@ export default {
 
     state: {
         list: [],
-        page: null,
+        page: 1,
     },
 
     reducers: {
-        save(state, { payload: { data: list, page } }) {
-            return { ...state, list, page }
+        save(state, { payload }) {
+            state.page = payload.page
+            state.list.update(payload.list)
+            return state
         },
     },
 
     effects: {
-        *fetch({ payload: { page = 1 } }, { call, put }) {
-            const { data } = yield call(API.getTimelines, { page })
+        *fetch({ payload: { type = 'public', page = 1 } }, { put }) {
+            const res = yield API.getTimelines(type, page)
+            if(res.code===10001){
+                yield put(routerRedux.push('login'))
+                return
+            }
             yield put({
                 type: 'save',
                 payload: {
-                    data,
+                    list: res.statuses,
                     page,
                 },
             })

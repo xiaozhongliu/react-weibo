@@ -3,6 +3,8 @@ import { browserHistory } from 'dva/router'
 import createLoading from 'dva-loading'
 import router from './router'
 import './config'
+import './util/extension'
+import './asset/style/index.css'
 
 const app = dva({
     history: browserHistory
