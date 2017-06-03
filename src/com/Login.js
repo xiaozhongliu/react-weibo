@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import { object as history } from 'prop-types'
 import logo from '../asset/logo.svg'
 import '../asset/style/com/Login.css'
 
@@ -7,7 +7,7 @@ class Login extends Component {
 
     constructor(props) {
         super(props)
-        this.history = PropTypes.object
+        this.history = history
     }
 
     login() {

@@ -1,5 +1,5 @@
+require('./helper')
 require('./util/enum')
-require('./globalHelper')
 const express = require('express')
 const compress = require('compression')
 const bodyParser = require('body-parser')

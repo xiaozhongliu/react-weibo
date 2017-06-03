@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import { object as history } from 'prop-types'
 import LeftMenu from './Menu'
 import '../asset/style/com/Main.css'
 
@@ -7,7 +7,7 @@ class Main extends Component {
 
     constructor(props) {
         super(props)
-        this.history = PropTypes.object
+        this.history = history
     }
 
     componentDidMount() {

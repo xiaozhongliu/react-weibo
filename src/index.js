@@ -6,15 +6,19 @@ import './config'
 import './util/extension'
 import './asset/style/index.css'
 
+// 1. Initialize
 const app = dva({
-    history: browserHistory
+    history: browserHistory,
+    onError(e) {
+        console.log(e.message)
+    },
 })
 
 // 2. Plugins
 app.use(createLoading())
 
 // 3. Model
-// Moved to router.js
+// moved to router.js
 
 // 4. Router
 app.router(router)
