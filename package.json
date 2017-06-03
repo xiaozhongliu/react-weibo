@@ -29,8 +29,9 @@
         "build-css": "node-sass-chokidar src/ -o src/asset/style",
         "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/asset/style --watch --recursive",
         "start-js": "react-scripts start",
-        "start": "npm-run-all -p watch-css start-js",
+        "dev": "npm-run-all -p watch-css start-js",
         "build": "npm run build-css && react-scripts build",
+        "prod": "cnpm i --production && pm2 start pm2.config.js --env prod",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject"
     }
