@@ -13,7 +13,7 @@ function RouterConfig({ history, app }) {
             },
             childRoutes: [
                 {
-                    path: '/timeline',
+                    path: '/list/:type',
                     getComponent(nextState, cb) {
                         require.ensure([], require => {
                             registerModel(app, require('./model/timeline').default)

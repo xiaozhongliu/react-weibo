@@ -12,10 +12,8 @@ class Timeline extends Component {
     }
 
     componentDidMount() {
-        const {
-            type = 'public',
-            page = 1
-        } = this.props.location.query
+        const { type = 'public' } = this.props.params
+        const { page = 1 } = this.props.location.query
 
         this.props.dispatch({
             type: 'timeline/fetch',

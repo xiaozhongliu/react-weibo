@@ -11,7 +11,7 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        this.props.history.push('timeline')
+        this.props.history.push('list/public')
     }
 
     render() {

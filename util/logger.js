@@ -28,8 +28,9 @@ logger.setLevel('INFO')
 
 // get host ip address
 const networksOrigin = os.networkInterfaces()
-const networks = networksOrigin.eth1 ||
+const networks = networksOrigin.en0 ||
                 networksOrigin.en1 ||
+                networksOrigin.eth1 ||
                 networksOrigin.本地连接
 const address = networks.find(network => network.family === 'IPv4')
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'dva/router'
 import classNames from 'classnames'
 import menu from '../asset/menu.png'
 import '../asset/style/com/Menu.css'
@@ -40,10 +41,10 @@ class Menu extends Component {
                     </div>
                     <ul>
                         <li onClick={this.toggleMenu}>
-                            <router-link to="/timeline/public">公共微博</router-link>
+                            <Link to="/list/public">公共微博</Link>
                         </li>
                         <li onClick={this.toggleMenu}>
-                            <router-link to="/timeline/friends">朋友微博</router-link>
+                            <Link to="/list/friends">朋友微博</Link>
                         </li>
                     </ul>
                 </aside>
