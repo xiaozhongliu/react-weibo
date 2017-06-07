@@ -11,7 +11,7 @@ class Login extends Component {
     }
 
     login() {
-        this.props.history.push('list')
+        this.props.history.push('/list/public')
         window.location.href = `${window.config.API_HOST}/weiboAuth`
     }
 
